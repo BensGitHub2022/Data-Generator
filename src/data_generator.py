@@ -22,6 +22,7 @@ class DataGenerator():
     begin_timestamp: int
     end_timestamp: int
     candlesticks: pd.DataFrame
+    
 
     def __init__(self, account_settings: str, credentials: str) -> None:
         self.json_settings = JsonReader(account_settings)
@@ -106,6 +107,9 @@ class DataGenerator():
             return Timeframe[timeframe].value
         except KeyError as e:
             print(f"{timeframe} is not a legal timeframe. {e}")
+
+    def get_context_mt5(self) -> ContextMT5:
+        return self.context_mt5
 
 class Timeframe(Enum):
     one_minute  = mt5.TIMEFRAME_M1

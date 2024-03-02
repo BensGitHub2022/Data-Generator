@@ -9,9 +9,20 @@ def main():
 
     connected = data_generator.connect()
     
+    metatrader5 = data_generator.get_context_mt5().get_metatrader()
+
     if (connected):    
         #data_generator.create_data_from_quantity(1000000)
-        data_generator.create_data_from_timestamp(1672531200,1704067200)
+        data_generator.create_data_from_timestamp(1672531200,1688083200)
+        
+        """
+        symbols = metatrader5.symbols_get("BCHUSD")
+        count = 0
+        for symbol in symbols:
+            print(symbol.name)
+            count += 1
 
+        print(count)
+        """
 if __name__ == '__main__':
     main()

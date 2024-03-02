@@ -7,6 +7,7 @@ class ContextMT5():
 
     def __init__(self, credentials: dict):
         self.credentials = credentials
+        self.metatrader = mt5
 
     def connect(self) -> bool:
         try:
@@ -45,3 +46,6 @@ class ContextMT5():
             raise e
         
         return True
+    
+    def get_metatrader(self) -> mt5:
+        return self.metatrader

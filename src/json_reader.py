@@ -21,11 +21,8 @@ class JsonReader(object):
     def get_json_data(self) -> dict:
         return self.json_data
     
-    def get_symbols_collection(self) -> list:
-        return self.json_data["mt5"]["symbols"]
-    
     def get_symbol(self) -> str:
-        return self.json_data["mt5"]["symbols"][0]
+        return self.json_data["mt5"]["symbol"]
     
     def get_timeframe(self) -> str:
         return self.json_data["mt5"]["timeframe"]
