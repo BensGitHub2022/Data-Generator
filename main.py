@@ -12,8 +12,8 @@ def main():
     metatrader5 = data_generator.get_context_mt5().get_metatrader()
 
     if (connected):    
-        #data_generator.create_data_from_quantity(1000000)
-        data_generator.create_data_from_timestamp(1672531200,1688083200)
+        data_generator.create_data_from_quantity(10)
+        #data_generator.create_data_from_timestamp(1672531200,1688083200)
         
         """
         symbols = metatrader5.symbols_get("BCHUSD")

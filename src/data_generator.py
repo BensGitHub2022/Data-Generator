@@ -77,19 +77,19 @@ class DataGenerator():
         return pd.DataFrame(ticks)
     
     def create_candlesticks_csv(self, df: pd.DataFrame) -> bool:
-        path = f"mock/{self.symbol}_{self.num_candlesticks}_candlesticks_{self.get_date_time_now()}.csv"
+        path = f"mock/candlesticks_{self.symbol}_{self.num_candlesticks}_{self.get_date_time_now()}.csv"
         pd.DataFrame.to_csv(df, path)
         print(f"{path} has been created!")
         return True
     
     def create_candlesticks_from_timestamp_csv(self, df: pd.DataFrame) -> bool:
-        path = f"mock/{self.symbol}_candlesticks_from_{self.begin_timestamp}_to_{self.end_timestamp}.csv"
+        path = f"mock/candlesticks_{self.symbol}_from_{self.begin_timestamp}_to_{self.end_timestamp}.csv"
         pd.DataFrame.to_csv(df, path)
         print(f"{path} has been created!")
         return True
     
     def create_ticks_from_timestamp_csv(self, df: pd.DataFrame) -> bool:
-        path = f"mock/{self.symbol}_ticks_from_{self.begin_timestamp}_to_{self.end_timestamp}.csv"
+        path = f"mock/ticks_from_{self.symbol}_{self.begin_timestamp}_to_{self.end_timestamp}.csv"
         pd.DataFrame.to_csv(df, path)
         print(f"{path} has been created!")
         return True
